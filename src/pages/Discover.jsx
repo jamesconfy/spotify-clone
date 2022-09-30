@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+// eslint-disable-next-line import/no-cycle
 import { Error, Loader, SongCard } from "../components";
 import { genres } from "../assets/constants";
 
@@ -19,10 +20,8 @@ const Discover = () => {
   }
   return (
     <div className="flex flex-col">
-      <div className="w-full flex justify-between items-center sm:flex-row flewx-col mt-4 mb-10">
-        <h2 className="font-bold text-3xl text-left text-zinc-300">
-          Discover {genreTitle}
-        </h2>
+      <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
+        <h2 className="font-bold text-3xl text-left text-zinc-300">Discover {genreTitle}</h2>
         <select
           onChange={(e) => {
             e.preventDefault();
@@ -38,16 +37,9 @@ const Discover = () => {
         </select>
       </div>
 
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      <div className="flex flex-wrap sm:justify-start justify-center gap-6">
         {data.map((song, i) => (
-          <SongCard
-            key={song.key}
-            i={i}
-            song={song}
-            activeSong={activeSong}
-            isPlaying={isPlaying}
-            data={data}
-          />
+          <SongCard key={song.key} i={i} song={song} activeSong={activeSong} isPlaying={isPlaying} data={data} />
         ))}
       </div>
     </div>

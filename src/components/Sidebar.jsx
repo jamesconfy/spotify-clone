@@ -26,22 +26,16 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[220px] py-10 px-4 bg-[#191234]">
+      <div className="md:flex hidden flex-col w-[150px] py-10 px-4 bg-[#191234]">
         <img src={logo} alt="logo" className="w-full object-contain h-14" />
         <NavLinks />
       </div>
 
       <div className="absolute md:hidden block top-6 right-3">
         {mobileMenuOpen ? (
-          <RiCloseLine
-            className="w-6 h-6 text-white mr-2"
-            onClick={() => setMobileMenuOpen(false)}
-          />
+          <RiCloseLine className="w-6 h-6 text-white mr-2" onClick={() => setMobileMenuOpen(false)} />
         ) : (
-          <HiOutlineMenu
-            className="w-6 h-6 text-white mr-2"
-            onClick={() => setMobileMenuOpen(true)}
-          />
+          <HiOutlineMenu className="w-6 h-6 text-white mr-2" onClick={() => setMobileMenuOpen(true)} />
         )}
       </div>
 
