@@ -12,8 +12,6 @@ import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 import "swiper/css";
 // eslint-disable-next-line import/no-unresolved
 import "swiper/css/free-mode";
-// eslint-disable-next-line import/no-cycle
-import { SongDetails } from "../pages";
 
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#7c6d8f] py-2 p-4 rounded-lg cursor-pointer mb-2">
