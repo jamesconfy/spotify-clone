@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 
 const Searchbar = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${search}`);
+  };
 
   return (
     <div>
@@ -17,7 +21,7 @@ const Searchbar = () => {
           <input
             name="search-field"
             value={search}
-            onChange={(e) => setSearch(e.currentTarget.value)}
+            onChange={(e) => setSearch(e.target.value)}
             id="search-field"
             placeholder="search"
             type="search"
